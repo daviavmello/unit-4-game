@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+
+
+</head>
+
+<body>
+
+    <h1 class="display-4">RPG game</h1>
+
+    <div class="characters">
+       
+        <br>
+        
+        <p id="mike"><img src="assets/images/mike.jpg" alt="" width="300px"></p>
+        <br>
+        <p id="will"><img src="assets/images/will.jpeg" alt="" width="300px"></p>
+        <br>
+        <p id="eleven"><img src="assets/images/eleven.jpg" alt="" width="300px"></p>
+        <br>
+        <p id="lucas"><img src="assets/images/lucas.jpg" alt="" width="300px"></p>
+    </div>
+
+    <div class="lead text-center your-character">
+        <p>Your character:</p>
+    </div>
+
+    <div class="lead text-center your-enemies">
+            <p>Enemies available:</p>
+    </div>
+
+    <div class="lead text-center your-fight">
+    </div>
+
+    <div class="lead text-center your-defender">
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- <script src="assets/javascript/game.js"> -->
+    <script>
+    
+    // (document).ready(function() {
+    var userCharacter = $("#mike, #will, #eleven, #lucas");
+    console.log(userCharacter);
+    
+
+    $(".characters").on("click", function(){
+    
+    $("#mike").appendTo(".your-character");
+    console.log(this);
+    
+    });
+        
+    
+    // });
+    </script>        
+
+</body>
+
+</html>
