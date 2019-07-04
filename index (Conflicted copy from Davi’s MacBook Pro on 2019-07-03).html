@@ -63,28 +63,34 @@
 
 
             var actors = [];
-            console.log(actors);
             var number = 0;
+            var targetScore = 0;
             var wins = 0;
             var losses = 0;
             var yourScore = 0;
-            
 
+            var mike = $('#mike');
 
             function reset() {
                 // Generate random number <= 100
                 for (var i = 0; i < 1; i++) {
                     number = Math.floor(Math.random() * 100) + 1;
+                    console.log(number);
                     $("#your-number").text(number);
+                    number = targetScore
                 }
-                
-
-
             };
 
-            reset();
+            function setCharacterValue(){
+                targetScore = Math.floor(Math.random() * 10);
+                console.log(targetScore);
+                return targetScore
+            }
+
             
-            $("#your-score").empty();
+
+
+            
 
             
             // Mike number
@@ -92,10 +98,13 @@
 
                 for (var i = 0; i < 2; i++) {
 
-                    var math = actors.push(Math.floor(Math.random() * 10) + 1);
+                    
+                    console.log(math)
                     $("#your-score").text("Your score: " + math);
-                }
+                    yourScore = math;
 
+                    
+                }
 
 
             });
@@ -107,13 +116,13 @@
                 for (var i = 0; i < 3; i++) {
 
                     var math = actors.push(Math.floor(Math.random() * 10) + 1);
-                    $("#your-score").text("Your score: " + math);
-
+                    yourScore = $("#your-score").text("Your score: " + math);
+                    console.log(yourScore);
                 }
 
 
 
-            });
+                });
 
 
             //Eleven number
@@ -122,13 +131,13 @@
                 for (var i = 0; i < 4; i++) {
 
                     var math = actors.push(Math.floor(Math.random() * 10) + 1);
-                    $("#your-score").text("Your score: " + math);
-
+                    yourScore = $("#your-score").text("Your score: " + math);
+                    console.log(yourScore);
                 }
 
 
 
-            });
+                });
 
 
             //Lucas number
@@ -138,40 +147,32 @@
                 for (var i = 0; i < 5; i++) {
 
                     var math = actors.push(Math.floor(Math.random() * 10) + 1);
-                    $("#your-score").text("Your score: " + math);
+                    yourScore = $("#your-score").text("Your score: " + math);
                     console.log(yourScore);
-
                 }
+
+                checkScore();
 
 
             });
 
-            console.log(yourScore);
-            console.log(number);
-
             function checkScore() {
 
-                if (yourScore === number) {
-
-
+                if (yourScore === targetScore) {
                     
                 wins++;
                 alert("You won this incredibly awful game!");
 
-                } else if (yourScore > number) {
+                } else if (yourScore > targetScore) {
                    
                 losses++;
                 alert("You lost this great game!");
-
                 }
 
             }
 
-            checkScore();
-
             $("#newgame").on("click", function() {
                 reset();
-
 
             });
 
